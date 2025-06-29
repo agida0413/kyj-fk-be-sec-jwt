@@ -32,6 +32,52 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+
+	// Spring Boot Redis 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+	// 선택 사항: Lettuce 클라이언트 (기본값)
+	implementation 'io.lettuce:lettuce-core'
+
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation platform('software.amazon.awssdk:bom:2.25.4') // 최신 BOM 버전 (2025 기준)
+	implementation 'software.amazon.awssdk:s3'
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+	// Spring Boot Redis 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+	// 선택 사항: Lettuce 클라이언트 (기본값)
+	implementation 'io.lettuce:lettuce-core'
+
+//	// Spring JDBC 및 트랜잭션
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+// MyBatis Spring Boot Starter
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+	// 데이터베이스 드라이버 (예: MySQL)
+	runtimeOnly 'com.mysql:mysql-connector-j'
+// HikariCP 커넥션 풀
+	//implementation 'com.zaxxer:HikariCP'
+
+	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+
 }
 
 tasks.named('test') {
